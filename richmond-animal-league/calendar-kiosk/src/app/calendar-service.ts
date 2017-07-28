@@ -16,13 +16,20 @@ class CalendarService{
           gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
           // Handle the initial sign-in state.
-          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          this.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
           gapi.auth2.getAuthInstance().signIn();
           //authorizeButton.onclick = handleAuthClick;
           //signoutButton.onclick = handleSignoutClick;
         });
       }
-
+      updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          //authorizeButton.style.display = 'none';
+          //signoutButton.style.display = 'block';
+          this.listUpcomingEvents();
+        } 
+      }
+     
       /**
        * Print the summary and start datetime/date of the next ten events in
        * the authorized user's calendar. If no events are found an
@@ -39,29 +46,11 @@ class CalendarService{
         }).then(function(response) {
           var events = response.result.items;
           
-          var jsonEvents;
           
-          if (events.length > 0) {
-            for (i = 0; i < events.length; i++) {
-              var event = events[i];
-              var when = event.start.dateTime;
-              if (!when) {
-                when = event.start.date;
-              }
-               jsonEvents= JSON.stringify(events);
-            }
-          } else {
-            appendPre('No upcoming events found.');
-          }
+         
+          return JSON.stringify(events);
         });
       }
 
-      function updateSigninStatus(isSignedIn) {
-        if (isSignedIn) {
-          //authorizeButton.style.display = 'none';
-          //signoutButton.style.display = 'block';
-          listUpcomingEvents();
-        } 
-      }
-     
+ 
 }
