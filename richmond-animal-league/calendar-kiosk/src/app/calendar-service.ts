@@ -1,6 +1,6 @@
 //import   * as gapi from "gapi";
 class CalendarService{
-      
+
     constructor () {
           this.initClient();
       }
@@ -29,9 +29,9 @@ class CalendarService{
           //authorizeButton.style.display = 'none';
           //signoutButton.style.display = 'block';
           this.listUpcomingEvents();
-        } 
+        }
       }
-     
+
       /**
        * Print the summary and start datetime/date of the next ten events in
        * the authorized user's calendar. If no events are found an
@@ -47,12 +47,12 @@ class CalendarService{
           'orderBy': 'startTime'
         }).then(function(response) {
           var events = response.result.items;
-          
-          
-         
+
+
+
           return JSON.stringify(events);
         });
       }
+#test comment
 
- 
 }
