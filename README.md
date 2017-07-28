@@ -11,4 +11,4 @@
 
 
 
-You can also decide to work in one fo the 8 priority areas in conjunctions with datasets. Take a look at some [suggested datasets]()
+You can also decide to work in one fo the 8 priority areas in conjunctions with datasets. Take a look at some [suggested datasets](https://github.com/RVATech/communiTECH2017/blob/master/datasets.md)
