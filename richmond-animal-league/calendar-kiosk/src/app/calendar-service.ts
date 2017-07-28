@@ -6,14 +6,16 @@ class CalendarService{
       }
      initClient() {
          var CLIENT_ID =  '136445539422-inbochsshi83reug93sluhiekkfkqdha.apps.googleusercontent.com';
-   
+         var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+        var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+
         gapi.client.init({
           discoveryDocs: DISCOVERY_DOCS,
           clientId: CLIENT_ID,
           scope: SCOPES
         }).then(function () {
           // Listen for sign-in state changes.
-          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+          gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
 
           // Handle the initial sign-in state.
           this.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
