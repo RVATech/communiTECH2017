@@ -22,3 +22,17 @@
 |__Workforce Preparation__| The region aligns workforce skills to employer needs. |__Social Stability__ | The region embraces our social diversity as an asset and supports a community where all residents have the opportunity to succeed.|
 |__Healthy Community__| The region is known for an active and healthy lifestyle. |__Coordinated Transportation__ | The region remains one of the most uncongested transportation networks in the country while supporting all modes of transportation. |
 |__James River__| The region will make the James River a centerpiece for entertainment, recreation, and commerce. | __Quality Place__| The region is a leading attractive, inclusive, and accessible community for arts, culture, recreation, and entertainment. |
+
+
+## Contact Information    
+**ARC**    
+Bill Slate:  (804) 380-4888     
+
+**Honoring Choices**       
+Robin Cummings:  (804) 955-5523    
+
+**Activation Capital**    
+Sara Maddox:  (804) 873-5447    
+
+**Richmond Animal League**     
+Abbey Grove:  (617) 930-2500    
