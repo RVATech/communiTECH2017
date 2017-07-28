@@ -4,7 +4,7 @@
 
 Begin by taking a look at our [nonprofit partners](https://github.com/RVATech/communiTECH2017/blob/master/Communitech%20Nonprofit%20Partners.pdf)
 
-<img src="https://user-images.githubusercontent.com/3732476/28696481-cf5e73e0-7303-11e7-96c8-db09b6c23a16.png" width="191"/><img src="https://user-images.githubusercontent.com/3732476/28696483-cf617fd6-7303-11e7-891d-4d1e0fb836cb.jpg" height="200"/>
+<img src="https://user-images.githubusercontent.com/3732476/28696481-cf5e73e0-7303-11e7-96c8-db09b6c23a16.png" width="191"/><img src="https://user-images.githubusercontent.com/3732476/28696483-cf617fd6-7303-11e7-891d-4d1e0fb836cb.jpg" width="249"/>
 <img src="https://user-images.githubusercontent.com/3732476/28696486-cf6509c6-7303-11e7-870c-cb41081bf4c7.jpg" width="200"/>
 
 <img src="https://user-images.githubusercontent.com/3732476/28696484-cf61d990-7303-11e7-88ee-38d3a288d865.png" height="125"/>
