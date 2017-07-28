@@ -12,6 +12,8 @@
 
 ## [CRC](https://www.capitalregioncollaborative.com/) Priority Areas
 
+**You can also decide to work in one fo the 8 priority areas in conjunctions with datasets. Take a look at some [suggested datasets](https://github.com/RVATech/communiTECH2017/blob/master/datasets.md)**
+
 <img src="https://user-images.githubusercontent.com/3732476/28701151-2e2d0b98-7322-11e7-8bea-d121867f5cf5.jpg" width="200"/> 
 
 || | | |
@@ -20,6 +22,3 @@
 |__Workforce Preparation__| The region aligns workforce skills to employer needs. |__Social Stability__ | The region embraces our social diversity as an asset and supports a community where all residents have the opportunity to succeed.|
 |__Healthy Community__| The region is known for an active and healthy lifestyle. |__Coordinated Transportation__ | The region remains one of the most uncongested transportation networks in the country while supporting all modes of transportation. |
 |__James River__| The region will make the James River a centerpiece for entertainment, recreation, and commerce. | __Quality Place__| The region is a leading attractive, inclusive, and accessible community for arts, culture, recreation, and entertainment. |
-
-
-**Review [some helpful public datasets](https://github.com/RVATech/communiTECH2017/blob/master/datasets.md)**
