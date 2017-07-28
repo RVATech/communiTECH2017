@@ -31,7 +31,7 @@ Bill Slate:  (804) 380-4888
 **Honoring Choices**       
 Robin Cummings:  (804) 955-5523    
 
-**Activation Capital**
+**Activation Capital**    
 Sara Maddox:  (804) 873-5447    
 
 **Richmond Animal League**     
