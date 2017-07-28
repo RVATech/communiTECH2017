@@ -12,7 +12,7 @@
 
 ## [CRC](https://www.capitalregioncollaborative.com/) Priority Areas
 
-**You can also decide to work in one fo the 8 priority areas in conjunctions with datasets. Take a look at some [suggested datasets](https://github.com/RVATech/communiTECH2017/blob/master/datasets.md)**
+**You can also decide to work in one of the 8 priority areas in conjunctions with datasets. Take a look at some [suggested datasets](https://github.com/RVATech/communiTECH2017/blob/master/datasets.md)**
 
 <img src="https://user-images.githubusercontent.com/3732476/28701151-2e2d0b98-7322-11e7-8bea-d121867f5cf5.jpg" width="200"/> 
 
