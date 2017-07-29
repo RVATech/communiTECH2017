@@ -1,17 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 declare var gapi: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   title = 'app';
+  public events;
+
+  constructor(private _cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    function start() {
+    // 1. Load the JavaScript client library.
+    gapi.load('client:auth2', () => this.start());
+  }
+
+  start() {
       // 2. Initialize the JavaScript client library.
       gapi.client.init({
         'apiKey': 'AIzaSyDOMZPTcoeWiUU9M5w3KkQ8HdBA9HE95S4',
@@ -25,17 +32,18 @@ export class AppComponent implements OnInit {
       .then(function () {
         // 3. Initialize and make the API request.
         return gapi.client.request({
-          'path': `https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=2017-07-26T00:00:00Z&timeMax=2017-07-26T23:59:00Z`
+          'path': `https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=2017-07-10T00:00:00Z&timeMax=2017-07-10T23:59:00Z`
           // ${new Date().toISOString()}`,
         });
       })
-      .then(function (response) {
-        console.log(response.result);
-      }, function (reason) {
-        console.log('Error: ' + reason.result.error.message);
-      });
+      .then(response => {
+          this.events = response.result.items;
+          this._cdr.detectChanges();
+          console.log(this.events);
+        },
+        function (reason) {
+          console.log('Error: ' + reason.result.error.message);
+        }
+      );
     }
-    // 1. Load the JavaScript client library.
-    gapi.load('client:auth2', start);
-  }
 }

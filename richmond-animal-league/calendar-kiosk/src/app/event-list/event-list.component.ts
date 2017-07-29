@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { CalendarService } from '../calendar-service';
 
 
@@ -7,17 +7,12 @@ import { CalendarService } from '../calendar-service';
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.css'],
 })
-export class EventListComponent implements OnInit {
-  public events;
-
-  constructor() { }
-
-  ngOnInit() {
-    // this.events = this._calendarService.initClient
-  }
-
+export class EventListComponent {
+  @Input()
+  public events: Event[];
 }
 
 interface Event {
   title: string;
+  summary: string;
 }
