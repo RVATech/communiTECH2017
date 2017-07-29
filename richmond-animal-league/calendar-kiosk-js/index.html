@@ -142,7 +142,7 @@
           var events = response.result.items;
 
           if (events.length > 0) {
-            $('#doctorName').append(events[0].summary);
+            $('#doctorName').text(events[0].summary);
 
             for (i = 1; i < events.length; i++) {
               var event = events[i];
@@ -161,8 +161,7 @@
               heightStyle: "content"
             });
 
-            //$('.ui-accordion .ui-accordion-header').css('padding', '2.5em, .5em, 2.5em, .5em');
-
+            $('#accordion').accordion('refresh');
             $('#doctorName').show();
 
           } else {

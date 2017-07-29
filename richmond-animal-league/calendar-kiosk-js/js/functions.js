@@ -1,7 +1,11 @@
 var currentOffset = 0;
 
 function addClickHandlers(){
+  var clickTimeout;
+
   $("#nextDayButton, #prevDayButton").click(function(event){
+    clearTimeout(clickTimeout);
+
     event.preventDefault();
 
     if(this.id === 'nextDayButton'){
@@ -10,17 +14,17 @@ function addClickHandlers(){
       currentOffset--;
     }
 
-    setTimeout(function(){
+   clickTimeout = setTimeout(function(){
       //clear accordion
-      $("#accordion").text("");
-
-      //fetch events for newly selected date
-      listUpcomingEvents(currentOffset);
+      $('#accordion').html('');
 
       //update date header
       updateDateHeader();
 
-    }, 1000);
+      //fetch events for newly selected date
+      listUpcomingEvents(currentOffset);
+
+    }, 500);
   });
 }
 
