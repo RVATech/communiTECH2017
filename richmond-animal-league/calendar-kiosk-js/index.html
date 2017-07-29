@@ -3,14 +3,19 @@
   <head>
     <title>Richmond Animal League Schedule</title>
     <meta charset='utf-8' />
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/accordion.css">
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"
       integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
       crossorigin="anonymous"></script>
   </head>
-  <body>
-    <!-- <p>Google Calendar API Quickstart</p> -->
+  <body align="center">
+    <h1 id="today" align="center"></h1>
+    <h2 id="doctorName" style="display:none"></h2>
+    <script>$("#today").append(new Date().toLocaleString('en-us', {  weekday: 'long', month: 'long', day:'2-digit' }));</script>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize-button" style="display: none;">Authorize</button>
@@ -134,10 +139,10 @@
           var events = response.result.items;
 
           if (events.length > 0) {
-            for (i = 0; i < events.length; i++) {
-              var event = events[i];
+            $('#doctorName').append(events[0].summary);
 
-              console.log(event);
+            for (i = 1; i < events.length; i++) {
+              var event = events[i];
 
               var when = event.start.dateTime;
               if (!when) {
@@ -146,11 +151,16 @@
               appendPre(event.summary, event.description, when);
             }
 
-            $( "#accordion" ).accordion({
+            $('#accordion').accordion({
               active: 0,
               collapsible: true,
               heightStyle: "content"
             });
+
+            //$('.ui-accordion .ui-accordion-header').css('padding', '2.5em, .5em, 2.5em, .5em');
+
+            $('#doctorName').show();
+
           } else {
             appendPre('n/a', 'No upcoming events found.');
           }
