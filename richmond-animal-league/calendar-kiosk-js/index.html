@@ -6,17 +6,21 @@
     <meta charset='utf-8' />
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="css/accordion.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"
       integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
       crossorigin="anonymous"></script>
+    <script src="js/functions.js"></script>
   </head>
   <body align="center">
-    <h1 id="today" align="center"></h1>
-    <h2 id="doctorName" style="display:none"></h2>
-    <script>$("#today").append(new Date().toLocaleString('en-us', {  weekday: 'long', month: 'long', day:'2-digit' }));</script>
+    <div>
+      <a id="prevDayButton" class="ui-button ui-widget ui-corner-all" style="float:left" href="#"><</a>
+      <a id="nextDayButton" class="ui-button ui-widget ui-corner-all" style="float:right" href="#">></a>
+      <h1 id="today" align="center"></h1>
+      <h2 id="doctorName" style="display:none"></h2>
+    </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize-button" style="display: none;">Authorize</button>
