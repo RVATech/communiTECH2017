@@ -16,3 +16,10 @@ body {
  left:100px;
  height:100px;
 }
+
+#refreshButton{
+	right: 100px;
+	position: absolute;
+	height: 5em;
+	cursor: pointer;
+}
