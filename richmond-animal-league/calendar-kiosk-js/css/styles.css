@@ -21,5 +21,9 @@ body {
 	right: 100px;
 	position: absolute;
 	height: 5em;
-	cursor: pointer;
+  cursor: pointer;
+}
+
+* {
+    font-family: Helvetica !important;
 }
