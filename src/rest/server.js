@@ -15,11 +15,14 @@ var connection = mysql.createConnection({
 
 
 app.get('/companies', function(req, res){
-    res.send('Company data');
+    res.send('All companies');
 });
 
-app.post('/companies', function(req, res){
+app.get('/companies/company/:id', function(req,res){
+    res.send('Company by id');
+});
 
+app.post('/companies/company', function(req, res){
     connection.query('INSERT INTO Companies SET ?', req.body,
         function (err, result) {
             if (err){
@@ -28,6 +31,21 @@ app.post('/companies', function(req, res){
             res.send('Company added to database with ID: ' + result.insertId);
         }
     );
+});
+
+app.post('/postings/posting', function(req,res){
+    connection.query('INSERT INTO Postings SET ?', req.body,
+        function (err, result) {
+            if (err){
+                throw err;
+            }
+            res.send('Posting added to database with ID: ' + result.insertId);
+        }
+    );
+});
+
+app.get('/postings/posting/:id', function(req,res){
+    res.send('Posting by ID');
 });
 
 app.listen(3001);
