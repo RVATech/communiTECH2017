@@ -121,10 +121,8 @@
        * appropriate message is printed.
        */
       function listUpcomingEvents(currentOffset) {
-        //TODO: Set the starting offset to 0 and make global to manipulate with next
-        //and previous buttons. Off by one for testing purposes for now.
         if(!currentOffset){
-          currentOffset = 0;
+          currentOffset = 0; //today
         }
 
         var timeMin = moment().add(currentOffset, 'days').startOf('day').format();

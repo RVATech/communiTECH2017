@@ -1,42 +1,31 @@
-var buttonClickCount = 0;
-var currentlySelectedDate = new Date();
+var currentOffset = 0;
 
 function addClickHandlers(){
   $("#nextDayButton, #prevDayButton").click(function(event){
     event.preventDefault();
 
     if(this.id === 'nextDayButton'){
-      buttonClickCount++;
+      currentOffset++;
     } else if(this.id === 'prevDayButton'){
-      buttonClickCount--;
+      currentOffset--;
     }
 
     setTimeout(function(){
-      //update global date
-      currentlySelectedDate.setDate(currentlySelectedDate.getDate() + buttonClickCount);
-
       //clear accordion
       $("#accordion").text("");
 
       //fetch events for newly selected date
-      listUpcomingEvents(buttonClickCount);
-
-      //reset global count
-      buttonClickCount = 0;
+      listUpcomingEvents(currentOffset);
 
       //update date header
-      updateDateHeader(currentlySelectedDate);
+      updateDateHeader();
 
     }, 1000);
   });
 }
 
-function updateDateHeader(selectedDate){
-  if(!selectedDate){
-    selectedDate = new Date();
-  }
-
-  $("#today").text(selectedDate.toLocaleString('en-us', {  weekday: 'long', month: 'long', day:'2-digit' }));
+function updateDateHeader(){
+  $("#today").text(moment().add(currentOffset, 'days').format("dddd, MMMM Do YYYY"));
 }
 
 $(document).ready(function() {
