@@ -1,1 +1,1 @@
-Run setup.sh to install preqrequisite Docker images.
+Run docker compose to deploy the application backend.
