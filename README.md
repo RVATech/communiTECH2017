@@ -4,8 +4,7 @@
 
 **Review [some information on local nonprofits with needs](https://github.com/RVATech/communiTECH2017/blob/master/Communitech%20Nonprofit%20Partners.pdf)**
 
-<img src="https://user-images.githubusercontent.com/3732476/28696483-cf617fd6-7303-11e7-891d-4d1e0fb836cb.jpg" width="249"/> 
-<img src="https://user-images.githubusercontent.com/11085842/28741289-06c5f320-73e1-11e7-9e50-22e3e1b3e41c.png" width="215"/>  <img src="https://user-images.githubusercontent.com/3732476/28696485-cf6219c8-7303-11e7-91e3-fdb3aec2d64e.jpg" width="282"/>
+<img src="https://user-images.githubusercontent.com/3732476/28696483-cf617fd6-7303-11e7-891d-4d1e0fb836cb.jpg" width="249"/> <img src="https://user-images.githubusercontent.com/11085842/28741289-06c5f320-73e1-11e7-9e50-22e3e1b3e41c.png" width="215"/> <img src="https://user-images.githubusercontent.com/3732476/28696485-cf6219c8-7303-11e7-91e3-fdb3aec2d64e.jpg" width="282"/>
 
 <img src="https://user-images.githubusercontent.com/3732476/28696488-cf6d9eec-7303-11e7-9bf2-8ced9a672872.png" width="442"/>  <img src="https://user-images.githubusercontent.com/3732476/28696487-cf6d676a-7303-11e7-84cf-21f3c96e0b28.gif" width="405"/>
 
