@@ -15,7 +15,7 @@
     <script src="js/functions.js"></script>
   </head>
   <body align="center">
-    
+
     <div>
       <a id="prevDayButton" class="ui-button ui-widget ui-corner-all" style="float:left" href="#"><</a>
       <img src="http://www.ral.org/images/uploads/RALlogo_RGB_2.jpg" id="logo"></img>
@@ -33,7 +33,12 @@
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
+
+      //FOR S3 WEBSITE
       var CLIENT_ID = '47327138876-41992tncfrq9u5r1jsdfq6k23mbfro1s.apps.googleusercontent.com';
+
+      //FOR LOCAL
+      //var CLIENT_ID = '47327138876-f520sfon4hloslraqb8cjoo4bjp0f510.apps.googleusercontent.com';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
@@ -110,7 +115,7 @@
        *
        * @param {string} message Text to be placed in pre element.
        */
-      function appendPre(summary, description, startTime) {
+      function appendPre(startTime, summary, description) {
         //var hour = startTime.getHours();
         var pre = $('#accordion');
         var textContent = "<h3>"+summary+" ("+startTime+")"+"</h3>\n<div>"+description+"</div>\n";
