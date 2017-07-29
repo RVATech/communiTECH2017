@@ -1,0 +1,19 @@
+<md-card style="margin: 20px 0" (click)="shown = !shown">
+  <md-card-title>
+    <div >
+      <span>{{ event.summary }} -</span>
+      <span *ngIf="event.start.date">All day event</span>
+      <span *ngIf="event.start.dateTime">{{ event.start.dateTime | date:'shortTime' }} to</span>
+      <span *ngIf="event.start.dateTime">{{ event.end.dateTime | date:'shortTime' }}</span>
+      <md-icon style="float: right;" *ngIf="event.description">
+        expand_more
+      </md-icon>
+    </div>
+  </md-card-title>
+  <md-card-content #foo>
+    <div *ngIf="shown">
+      {{ event.description }}
+    </div>
+  </md-card-content>
+</md-card>
+<!-- <app-event-item-detail></app-event-item-detail> -->
