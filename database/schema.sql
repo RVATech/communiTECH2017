@@ -7,7 +7,7 @@ CREATE TABLE AC.Companies(
 commit;
 
 CREATE TABLE AC.Postings (
-  posting_id INT AUTO_INCREMENT PRIMARY KEY,
+  id INT AUTO_INCREMENT PRIMARY KEY,
   description VARCHAR(8000),
   title VARCHAR(255),
   company_id INT,
