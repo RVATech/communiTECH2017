@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { MdToolbarModule, MdListModule } from '@angular/material';
+import { MdToolbarModule, MdListModule, MdCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { EventListComponent } from './event-list/event-list.component';
@@ -24,6 +24,7 @@ import { CalendarService } from './calendar-service';
     HttpModule,
     MdToolbarModule,
     MdListModule,
+    MdCardModule,
   ],
   providers: [
     CalendarService

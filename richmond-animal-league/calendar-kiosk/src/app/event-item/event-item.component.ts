@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-event-item',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventItemComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  event;
 
   ngOnInit() {
   }
