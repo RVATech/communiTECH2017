@@ -10,9 +10,6 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var app_routing_module_1 = require("./app-routing.module");
-// Imports for loading & configuring the in-memory web api
-var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
-var in_memory_postings_1 = require("./in-memory-postings");
 var app_component_1 = require("./app.component");
 var posting_service_1 = require("./posting.service");
 var postings_component_1 = require("./postings.component");
@@ -30,7 +27,6 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_postings_1.InMemoryPostingsService),
             app_routing_module_1.AppRoutingModule
         ],
         declarations: [

@@ -9,7 +9,7 @@ import { Posting } from './posting';
 export class PostingService {
 
     private headers = new Headers({'Content-Type': 'application/json'});
-    private postingsUrl = 'api/postings';  // URL to web api
+    private postingsUrl = 'localhost:8080/postings';  // URL to web api
 
     constructor(private http: Http) { }
 

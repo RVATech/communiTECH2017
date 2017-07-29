@@ -9,7 +9,7 @@ import { Profile } from './profile';
 export class ProfileService {
 
     private headers = new Headers({'Content-Type': 'application/json'});
-    private profilesUrl = 'api/profiles';  // URL to web api
+    private profilesUrl = 'localhost:8080/profiles';  // URL to web api
 
     constructor(private http: Http) { }
 

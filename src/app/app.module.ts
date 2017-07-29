@@ -21,7 +21,6 @@ import { PostingSearchComponent }  from './posting-search.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryPostingsService),
     AppRoutingModule
   ],
   declarations: [
