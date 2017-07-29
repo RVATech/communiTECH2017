@@ -15,11 +15,17 @@ var connection = mysql.createConnection({
 
 
 app.get('/companies', function(req, res){
-    res.send('All companies');
+    connection.query('SELECT * from AC.Companies',
+        function (err, result) {
+            if (err){
+                    throw err;
+            }
+            res.send(result);
+        })
 });
 
 app.get('/companies/company/:id', function(req,res){
-    res.send('Company by id');
+    res.send('SELECT * from AC.Companies where company_id = ?', req.body);
 });
 
 app.post('/companies/company', function(req, res){
@@ -44,8 +50,18 @@ app.post('/postings/posting', function(req,res){
     );
 });
 
+app.get('/postings', function(req, res){
+    connection.query('SELECT * from AC.Postings as A join AC.Companies as B on A.company_id = B.company_id',
+        function (err, result) {
+            if (err){
+                throw err;
+            }
+            res.send(result);
+        })
+});
+
 app.get('/postings/posting/:id', function(req,res){
-    res.send('Posting by ID');
+    res.send('SELECT * from AC.Postings where id = ?', req.body);
 });
 
 app.listen(8080);
