@@ -1,56 +1,56 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
-import { Hero }                from './hero';
-import { HeroService }         from './hero.service';
+import {Posting} from "./posting";
+import {PostingService} from "./posting.service";
 
 @Component({
     selector: 'my-postings',
     templateUrl: './postings.component.html',
-    styleUrls: [ './heroes.component.css' ]
+    styleUrls: [ './postings.component.css' ]
 })
 export class PostingsComponent implements OnInit {
-    heroes: Hero[];
-    selectedHero: Hero;
+    postings: Posting[];
+    selectedPosting: Posting;
 
     constructor(
-        private heroService: HeroService,
+        private postingService: PostingService,
         private router: Router) { }
 
-    getHeroes(): void {
-        this.heroService
-            .getHeroes()
-            .then(heroes => this.heroes = heroes);
+    getPostings(): void {
+        this.postingService
+            .getPostings()
+            .then(postings => this.postings = postings);
     }
 
-    add(name: string): void {
-        name = name.trim();
-        if (!name) { return; }
-        this.heroService.create(name)
-            .then(hero => {
-                this.heroes.push(hero);
-                this.selectedHero = null;
+    add(title: string): void {
+        title = title.trim();
+        if (!title) { return; }
+        this.postingService.create(title)
+            .then(posting => {
+                this.postings.push(posting);
+                this.selectedPosting = null;
             });
     }
 
-    delete(hero: Hero): void {
-        this.heroService
-            .delete(hero.id)
+    delete(posting: Posting): void {
+        this.postingService
+            .delete(posting.id)
             .then(() => {
-                this.heroes = this.heroes.filter(h => h !== hero);
-                if (this.selectedHero === hero) { this.selectedHero = null; }
+                this.postings = this.postings.filter(h => h !== posting);
+                if (this.selectedPosting === posting) { this.selectedPosting = null; }
             });
     }
 
     ngOnInit(): void {
-        this.getHeroes();
+        this.getPostings();
     }
 
-    onSelect(hero: Hero): void {
-        this.selectedHero = hero;
+    onSelect(posting: Posting): void {
+        this.selectedPosting = posting;
     }
 
     gotoDetail(): void {
-        this.router.navigate(['/detail', this.selectedHero.id]);
+        this.router.navigate(['/company_detail', this.selectedPosting.id]);
     }
 }

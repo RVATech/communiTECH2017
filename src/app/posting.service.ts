@@ -37,16 +37,16 @@ export class PostingService {
             .catch(this.handleError);
     }
 
-    create(name: string): Promise<Posting> {
+    create(title: string): Promise<Posting> {
         return this.http
-            .post(this.postingsUrl, JSON.stringify({name: name}), {headers: this.headers})
+            .post(this.postingsUrl, JSON.stringify({title: title}), {headers: this.headers})
             .toPromise()
             .then(res => res.json().data as Posting)
             .catch(this.handleError);
     }
 
     update(posting: Posting): Promise<Posting> {
-        const url = `${this.postingsUrl}/${posting.posting_id}`;
+        const url = `${this.postingsUrl}/${posting.id}`;
         return this.http
             .put(url, JSON.stringify(posting), {headers: this.headers})
             .toPromise()

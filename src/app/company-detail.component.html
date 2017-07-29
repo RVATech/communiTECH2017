@@ -1,0 +1,12 @@
+<div *ngIf="posting">
+    <h2>{{posting.title}} details!</h2>
+    <div>
+        <label>Start Date: </label> <span>{{posting.start_date | date: "medium"}}</span>
+    </div>
+    <div>
+        <label>Description: </label>
+        <input [(ngModel)]="posting.description" placeholder="description" />
+    </div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+</div>
