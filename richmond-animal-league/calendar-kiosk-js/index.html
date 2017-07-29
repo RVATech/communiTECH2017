@@ -121,6 +121,8 @@
        * appropriate message is printed.
        */
       function listUpcomingEvents(currentOffset) {
+        $('#doctorName').html('');
+
         if(!currentOffset){
           currentOffset = 0; //today
         }
@@ -156,12 +158,14 @@
             }
 
             $('#accordion').accordion({
-              active: 0,
               collapsible: true,
               heightStyle: "content"
             });
 
             $('#accordion').accordion('refresh');
+
+            //set the first active
+            $("#accordion" ).accordion( "option", "active", 0 );
             $('#doctorName').show();
 
           } else {
