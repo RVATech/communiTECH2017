@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { EventItemComponent } from './event-item/event-item.component';
 import { EventItemDetailComponent } from './event-item-detail/event-item-detail.component';
+import { HttpModule } from '@angular/http';
+import { CalendarService } from './calendar-service';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,13 @@ import { EventItemDetailComponent } from './event-item-detail/event-item-detail.
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpModule,
     MdToolbarModule,
     MdListModule,
   ],
-  providers: [],
+  providers: [
+    CalendarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
