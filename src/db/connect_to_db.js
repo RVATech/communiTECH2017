@@ -1,6 +1,5 @@
 //https://hackernoon.com/nodejs-mysql-install-setup-tutorial-example-connection-insert-query-fd5c5032d3b0
 var mysql = require("mysql");
-// First you need to create a connection to the db
 var con = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
