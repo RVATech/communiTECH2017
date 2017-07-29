@@ -7,34 +7,31 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryPostingsService }  from './in-memory-postings';
 
 import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard.component';
-import { HeroesComponent }      from './heroes.component';
-import { HeroDetailComponent }  from './hero-detail.component';
-import { HeroService }          from './hero.service';
-import { HeroSearchComponent }  from './hero-search.component';
 import {PostingService} from "./posting.service";
 import {PostingsComponent} from "./postings.component";
+import {CompaniesComponent} from "./companies.component";
+import { CompanyDetailComponent }  from './company-detail.component';
+import { PostingSearchComponent }  from './posting-search.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryPostingsService),
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    HeroSearchComponent,
     PostingsComponent,
+    CompaniesComponent,
+      CompanyDetailComponent,
+      PostingSearchComponent
   ],
-  providers: [ HeroService, PostingService ],
+  providers: [ PostingService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

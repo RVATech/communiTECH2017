@@ -1,0 +1,9 @@
+<h3>Postings</h3>
+<div class="grid grid-pad">
+    <a *ngFor="let posting of postings"  [routerLink]="['/company_detail', posting.id]"  class="col-1-4">
+        <div class="module posting">
+            <h4>{{posting.category}}</h4>
+        </div>
+    </a>
+</div>
+<posting-search></posting-search>

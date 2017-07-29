@@ -1,22 +1,22 @@
 <h2>My Heroes</h2>
 <div>
-    <label>Hero name:</label> <input #heroName />
-    <button (click)="add(heroName.value); heroName.value=''">
+    <label>Hero name:</label> <input #postingTitle />
+    <button (click)="add(postingTitle.value); postingTitle.value=''">
         Add
     </button>
 </div>
 <ul class="heroes">
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
-        [class.selected]="hero === selectedHero">
-        <span class="badge">{{hero.id}}</span>
-        <span>{{hero.name}}</span>
+    <li *ngFor="let posting of postings" (click)="onSelect(posting)"
+        [class.selected]="posting === selectedPosting">
+        <span class="badge">{{posting.owner_id}}</span>
+        <span>{{posting.title}}</span>
         <button class="delete"
-                (click)="delete(hero); $event.stopPropagation()">x</button>
+                (click)="delete(posting); $event.stopPropagation()">x</button>
     </li>
 </ul>
-<div *ngIf="selectedHero">
+<div *ngIf="selectedPosting">
     <h2>
-        {{selectedHero.name | uppercase}} is my hero
+        {{selectedPosting.title | uppercase}} <br> {{selectedPosting.description}}
     </h2>
     <button (click)="gotoDetail()">View Details</button>
 </div>

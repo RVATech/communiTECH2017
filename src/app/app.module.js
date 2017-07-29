@@ -12,15 +12,13 @@ var http_1 = require("@angular/http");
 var app_routing_module_1 = require("./app-routing.module");
 // Imports for loading & configuring the in-memory web api
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
-var in_memory_data_service_1 = require("./in-memory-data.service");
+var in_memory_postings_1 = require("./in-memory-postings");
 var app_component_1 = require("./app.component");
-var dashboard_component_1 = require("./dashboard.component");
-var heroes_component_1 = require("./heroes.component");
-var hero_detail_component_1 = require("./hero-detail.component");
-var hero_service_1 = require("./hero.service");
-var hero_search_component_1 = require("./hero-search.component");
 var posting_service_1 = require("./posting.service");
 var postings_component_1 = require("./postings.component");
+var companies_component_1 = require("./companies.component");
+var company_detail_component_1 = require("./company-detail.component");
+var posting_search_component_1 = require("./posting-search.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,18 +30,17 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_postings_1.InMemoryPostingsService),
             app_routing_module_1.AppRoutingModule
         ],
         declarations: [
             app_component_1.AppComponent,
-            dashboard_component_1.DashboardComponent,
-            hero_detail_component_1.HeroDetailComponent,
-            heroes_component_1.HeroesComponent,
-            hero_search_component_1.HeroSearchComponent,
             postings_component_1.PostingsComponent,
+            companies_component_1.CompaniesComponent,
+            company_detail_component_1.CompanyDetailComponent,
+            posting_search_component_1.PostingSearchComponent
         ],
-        providers: [hero_service_1.HeroService, posting_service_1.PostingService],
+        providers: [posting_service_1.PostingService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
