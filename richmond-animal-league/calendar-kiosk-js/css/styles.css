@@ -1,0 +1,18 @@
+.ui-accordion .ui-accordion-header {
+	padding: 2.5em .5em 2.5em .7em;
+}
+
+.ui-button {
+  padding: 2em 2em;
+}
+
+body {
+  font-family: Algerian;
+}
+
+#logo{
+ position:absolute;
+ top:0;
+ left:100px;
+ height:100px;
+}

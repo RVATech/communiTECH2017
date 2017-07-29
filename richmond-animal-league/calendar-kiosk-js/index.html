@@ -5,17 +5,24 @@
     <meta charset='utf-8' />
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="css/accordion.css">
+    <link rel="stylesheet" href="css/styles.css">
 
+    <script src="js/moment.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"
       integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
       crossorigin="anonymous"></script>
+    <script src="js/functions.js"></script>
   </head>
   <body align="center">
-    <h1 id="today" align="center"></h1>
-    <h2 id="doctorName" style="display:none"></h2>
-    <script>$("#today").append(new Date().toLocaleString('en-us', {  weekday: 'long', month: 'long', day:'2-digit' }));</script>
+    
+    <div>
+      <a id="prevDayButton" class="ui-button ui-widget ui-corner-all" style="float:left" href="#"><</a>
+      <img src="http://www.ral.org/images/uploads/RALlogo_RGB_2.jpg" id="logo"></img>
+      <a id="nextDayButton" class="ui-button ui-widget ui-corner-all" style="float:right" href="#">></a>
+      <h1 id="today" align="center"></h1>
+      <h2 id="doctorName" style="display:none"></h2>
+    </div>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize-button" style="display: none;">Authorize</button>
@@ -26,7 +33,7 @@
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '47327138876-f520sfon4hloslraqb8cjoo4bjp0f510.apps.googleusercontent.com';
+      var CLIENT_ID = '47327138876-41992tncfrq9u5r1jsdfq6k23mbfro1s.apps.googleusercontent.com';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
@@ -115,15 +122,15 @@
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
-      function listUpcomingEvents() {
-        var currentDate = new Date();
-        var month = currentDate.getUTCMonth() + 1; //months from 1-12
-        //var day = currentDate.getUTCDate();
-        var day = 28;
-        var year = currentDate.getUTCFullYear();
+      function listUpcomingEvents(currentOffset) {
+        $('#doctorName').html('');
 
-        var timeMin = year+'-'+month+'-'+day+'T00:00:00Z';
-        var timeMax = year+'-'+month+'-'+(day+1)+'T00:00:00Z';
+        if(!currentOffset){
+          currentOffset = 0; //today
+        }
+
+        var timeMin = moment().add(currentOffset, 'days').startOf('day').format();
+        var timeMax = moment().add(currentOffset, 'days').endOf('day').format();
 
         console.log(timeMin+" "+timeMax);
 
@@ -139,26 +146,28 @@
           var events = response.result.items;
 
           if (events.length > 0) {
-            $('#doctorName').append(events[0].summary);
+            $('#doctorName').text(events[0].summary);
 
             for (i = 1; i < events.length; i++) {
               var event = events[i];
 
-              var when = event.start.dateTime;
+              var when = moment(event.start.dateTime).format("h:mm A") + " - " + moment(event.end.dateTime).format("h:mm A")
+
               if (!when) {
                 when = event.start.date;
               }
-              appendPre(event.summary, event.description, when);
+              appendPre(when, event.summary, event.description);
             }
 
             $('#accordion').accordion({
-              active: 0,
               collapsible: true,
               heightStyle: "content"
             });
 
-            //$('.ui-accordion .ui-accordion-header').css('padding', '2.5em, .5em, 2.5em, .5em');
+            $('#accordion').accordion('refresh');
 
+            //set the first active
+            $("#accordion" ).accordion( "option", "active", 0 );
             $('#doctorName').show();
 
           } else {
