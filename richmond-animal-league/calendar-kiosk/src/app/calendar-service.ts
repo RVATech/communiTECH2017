@@ -1,12 +1,14 @@
 declare var gapi: any;
+import { Injectable } from '@angular/core';
+@Injectable()
 
-class CalendarService {
+export class CalendarService {
 
   constructor() {
     this.initClient();
   }
   initClient() {
-    const CLIENT_ID = '136445539422-inbochsshi83reug93sluhiekkfkqdha.apps.googleusercontent.com';
+    const CLIENT_ID = '956894814385-v9ocrgdh870nhqhkm25iaa2s47g383te.apps.googleusercontent.com';
     const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'];
     const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
@@ -39,6 +41,7 @@ class CalendarService {
    * appropriate message is printed.
    */
   listUpcomingEvents() {
+    let events;
     gapi.client.calendar.events.list({
       'calendarId': 'primary',
       'timeMin': (new Date()).toISOString(),
@@ -47,11 +50,9 @@ class CalendarService {
       'maxResults': 10,
       'orderBy': 'startTime'
     }).then(function (response) {
-      const events = response.result.items;
-
-
-      return JSON.stringify(events);
+      events = response.result.items;
     });
+    return events;
   }
 
 }

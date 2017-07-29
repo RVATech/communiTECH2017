@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { CalendarService } from '../calendar-service';
+
 
 @Component({
   selector: 'app-event-list',
   templateUrl: './event-list.component.html',
-  styleUrls: ['./event-list.component.css']
+  styleUrls: ['./event-list.component.css'],
+  providers: [CalendarService]
 })
 export class EventListComponent implements OnInit {
-  public events: string[];
+  public events;
 
-  constructor() { }
+  constructor(private _calendarService: CalendarService) { }
 
   ngOnInit() {
-    this.events = [
-      'item1',
-      'item2',
-    ];
+    this.events = this._calendarService.listUpcomingEvents();
   }
 
 }
