@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="moment.js"></script>
     <title>Richmond Animal League Schedule</title>
     <meta charset='utf-8' />
 
@@ -144,11 +145,12 @@
             for (i = 1; i < events.length; i++) {
               var event = events[i];
 
-              var when = event.start.dateTime;
+              var when = moment(event.start.dateTime).format("h:mm A") + " - " + moment(event.end.dateTime).format("h:mm A")
+
               if (!when) {
                 when = event.start.date;
               }
-              appendPre(event.summary, event.description, when);
+              appendPre(when, event.summary, event.description);
             }
 
             $('#accordion').accordion({
