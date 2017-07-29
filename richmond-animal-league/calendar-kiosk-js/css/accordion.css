@@ -1,3 +1,7 @@
 .ui-accordion .ui-accordion-header {
 	padding: 2.5em .5em 2.5em .7em;
 }
+
+body {
+  font-family: Algerian;
+}

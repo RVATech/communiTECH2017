@@ -2,6 +2,10 @@
 <html>
   <head>
     <script src="moment.js"></script>
+    <script type='text/javascript' > 
+      //Change this offset to 0 before deploying
+      var currentOffset = -1; 
+    </script>
     <title>Richmond Animal League Schedule</title>
     <meta charset='utf-8' />
 
@@ -16,7 +20,7 @@
   <body align="center">
     <h1 id="today" align="center"></h1>
     <h2 id="doctorName" style="display:none"></h2>
-    <script>$("#today").append(new Date().toLocaleString('en-us', {  weekday: 'long', month: 'long', day:'2-digit' }));</script>
+    <script>$("#today").append(moment().add(-1, 'days').format("dddd, MMMM Do YYYY"));</script>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize-button" style="display: none;">Authorize</button>
@@ -119,7 +123,6 @@
       function listUpcomingEvents() {
         //TODO: Set the starting offset to 0 and make global to manipulate with next
         //and previous buttons. Off by one for testing purposes for now.
-        currentOffset = -1;
         var timeMin = moment().add(currentOffset, 'days').startOf('day').format();
         var timeMax = moment().add(currentOffset, 'days').endOf('day').format();
 
