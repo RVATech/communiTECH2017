@@ -1,16 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-event-item',
   templateUrl: './event-item.component.html',
   styleUrls: ['./event-item.component.css']
 })
-export class EventItemComponent implements OnInit {
-
+export class EventItemComponent {
   @Input()
   event;
 
-  ngOnInit() {
+  private _shown = false;
+
+  get shown() {
+    return this._shown;
   }
 
+  set shown(shown: boolean) {
+    if (shown !== this.shown) {
+      this._shown = shown;
+      this._cdr.detectChanges();
+    }
+  }
+
+  constructor(private _cdr: ChangeDetectorRef) {}
 }

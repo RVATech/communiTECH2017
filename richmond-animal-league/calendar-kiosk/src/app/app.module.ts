@@ -10,6 +10,7 @@ import { EventItemComponent } from './event-item/event-item.component';
 import { EventItemDetailComponent } from './event-item-detail/event-item-detail.component';
 import { HttpModule } from '@angular/http';
 import { CalendarService } from './calendar-service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CalendarService } from './calendar-service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     HttpModule,
     MdToolbarModule,
     MdListModule,
