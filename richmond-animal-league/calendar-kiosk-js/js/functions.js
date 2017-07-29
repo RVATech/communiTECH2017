@@ -3,7 +3,7 @@ var currentOffset = 0;
 function addClickHandlers(){
   var clickTimeout;
 
-  $("#nextDayButton, #prevDayButton").click(function(event){
+  $("#nextDayButton, #prevDayButton, #refreshButton").click(function(event){
     clearTimeout(clickTimeout);
 
     event.preventDefault();
@@ -15,17 +15,21 @@ function addClickHandlers(){
     }
 
    clickTimeout = setTimeout(function(){
-      //clear accordion
-      $('#accordion').html('');
-
-      //update date header
-      updateDateHeader();
-
-      //fetch events for newly selected date
-      listUpcomingEvents(currentOffset);
+      getEvents();
 
     }, 500);
   });
+}
+
+function getEvents(){
+  //clear accordion
+  $('#accordion').html('');
+
+  //update date header
+  updateDateHeader();
+
+  //fetch events for newly selected date
+  listUpcomingEvents(currentOffset);
 }
 
 function updateDateHeader(){

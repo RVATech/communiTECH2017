@@ -16,6 +16,7 @@ body {
  left:100px;
  height:100px;
 }
+<<<<<<< HEAD
 #accordion .ui-accordion-content {
   width: 100%;
   background-color: #f3f3f3;
@@ -74,3 +75,14 @@ body {
 }
 
 #accordion .ui-accordion-header.ui-state-active { background: #0c8d11; }
+
+#refreshButton{
+	right: 100px;
+	position: absolute;
+	height: 5em;
+  cursor: pointer;
+}
+
+* {
+    font-family: Helvetica !important;
+}
