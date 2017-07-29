@@ -11,6 +11,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "core-js": "^2.4.1",
+    "cors": "^2.8.4",
     "express": "^4.15.3",
     "mysql": "^2.14.0",
     "rxjs": "5.0.1",

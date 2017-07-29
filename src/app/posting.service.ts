@@ -9,7 +9,7 @@ import { Posting } from './posting';
 export class PostingService {
 
     private headers = new Headers({'Content-Type': 'application/json'});
-    private postingsUrl = 'localhost:8080/postings';  // URL to web api
+    private postingsUrl = 'http://localhost:8080/postings';  // URL to web api
 
     constructor(private http: Http) { }
 
@@ -19,7 +19,6 @@ export class PostingService {
             .then(response => response.json().data as Posting[])
             .catch(this.handleError);
     }
-
 
     getPosting(id: number): Promise<Posting> {
         const url = `${this.postingsUrl}/${id}`;

@@ -4,7 +4,5 @@ export class Posting{
     title: string;
     owner_id: number;
     category: string;
-    start_date: Date;
-    end_date: Date;
-    name: string;
+    company_name: string;
 }
