@@ -1,9 +1,10 @@
 CREATE DATABASE AC;
-
+commit;
 CREATE TABLE AC.Companies(
   company_id INT AUTO_INCREMENT PRIMARY KEY,
   company_name VARCHAR(255)
 );
+commit;
 
 CREATE TABLE AC.Postings (
   posting_id INT AUTO_INCREMENT PRIMARY KEY,

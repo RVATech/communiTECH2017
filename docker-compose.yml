@@ -1,0 +1,14 @@
+version: '2'
+services:
+  users-service:
+    build: ./src/rest
+    ports:
+     - "8080:8080"
+    depends_on:
+     - mysql
+  mysql:
+    build: ./src/db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysqlpw

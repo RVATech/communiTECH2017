@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 var mysql = require("mysql");
 var connection = mysql.createConnection({
-    host: "127.0.0.1",
+    host: "mysql",
     user: "root",
     password: "mysqlpw",
     database: "AC"
@@ -48,5 +48,5 @@ app.get('/postings/posting/:id', function(req,res){
     res.send('Posting by ID');
 });
 
-app.listen(3001);
-console.log('Listening on port 3001...');
+app.listen(8080);
+console.log('Listening on port 8080...');
