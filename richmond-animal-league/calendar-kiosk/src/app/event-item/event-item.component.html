@@ -1,6 +1,6 @@
-<md-card style="margin: 20px 0">
+<md-card style="margin: 20px 0" (click)="shown = !shown">
   <md-card-title>
-    <div (click)="shown = !shown">
+    <div >
       <span>{{ event.summary }} -</span>
       <span *ngIf="event.start.date">All day event</span>
       <span *ngIf="event.start.dateTime">{{ event.start.dateTime | date:'shortTime' }} to</span>
