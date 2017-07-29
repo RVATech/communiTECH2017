@@ -16,3 +16,8 @@ CREATE TABLE AC.Postings (
   CONSTRAINT fk_company FOREIGN KEY (company_id)
   REFERENCES AC.Companies(company_id)
 );
+
+INSERT INTO AC.Postings VALUES(1,'Work really hard','Really hard worker',1, CURRENT_TIMESTAMP , CURRENT_TIMESTAMP );
+INSERT INTO AC.Postings VALUES(2,'Work even harder','Management Manager',2, CURRENT_TIMESTAMP , CURRENT_TIMESTAMP );
+INSERT INTO AC.Companies VALUES(1,'Activation Capital');
+INSERT INTO AC.Companies VALUES(2,'Activation Capital One')
