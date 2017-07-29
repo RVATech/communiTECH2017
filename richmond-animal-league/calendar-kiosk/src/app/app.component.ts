@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
       .then(function () {
         // 3. Initialize and make the API request.
         return gapi.client.request({
-          'path': `https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=2017-07-10T00:00:00Z&timeMax=2017-07-10T23:59:00Z`
+          'path': `https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=2017-07-28T00:00:00Z&timeMax=2017-07-28T23:59:00Z`
           // ${new Date().toISOString()}`,
         });
       })
