@@ -15,11 +15,18 @@ function addClickHandlers(){
       //update global date
       currentlySelectedDate.setDate(currentlySelectedDate.getDate() + buttonClickCount);
 
+      //clear accordion
+      $("#accordion").text("");
+
+      //fetch events for newly selected date
+      listUpcomingEvents(buttonClickCount);
+
       //reset global count
       buttonClickCount = 0;
 
       //update date header
       updateDateHeader(currentlySelectedDate);
+
     }, 1000);
   });
 }

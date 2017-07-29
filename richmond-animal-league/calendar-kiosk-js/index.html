@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="moment.js"></script>
     <title>Richmond Animal League Schedule</title>
     <meta charset='utf-8' />
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/styles.css">
 
+    <script src="js/moment.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"
       integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
@@ -120,10 +120,13 @@
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
-      function listUpcomingEvents() {
+      function listUpcomingEvents(currentOffset) {
         //TODO: Set the starting offset to 0 and make global to manipulate with next
         //and previous buttons. Off by one for testing purposes for now.
-        currentOffset = -1;
+        if(!currentOffset){
+          currentOffset = 0;
+        }
+
         var timeMin = moment().add(currentOffset, 'days').startOf('day').format();
         var timeMax = moment().add(currentOffset, 'days').endOf('day').format();
 
